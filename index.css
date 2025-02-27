@@ -1,3 +1,10 @@
+/* Ensure body and html take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -18,12 +25,7 @@ header h1 {
     font-size: 50px;
 }
 
-.container {
-    align-self: center;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px;
-}
+
 
 .sidebar {
     text-align: center;
@@ -50,14 +52,24 @@ header h1 {
     transition: 0.5s ease;
 }
 
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* This centers the content horizontally */
+    align-items: center; /* This centers the content vertically */
+    margin: 20px;
+    height: 100vh; /* Ensures the container takes up the full viewport height */
+}
+
 .main-content {
-    width: 70%;
+    width: 80%; /* Adjust the width as needed */
+    max-width: 1200px; /* Optional: Limits the max width to prevent too wide content */
     padding: 15px;
     background-color: white;
     box-sizing: border-box;
     margin-left: 20px;
+    display: block;
 }
-
 .post {
     display: flex;
     background-color:white;
@@ -66,7 +78,7 @@ header h1 {
     border: 2px solid #ddd;
 }
 .image img{
-    width: 400px;
+    width: 450px;
     height: 100%;
 }
 .post .text{
@@ -86,15 +98,14 @@ header h1 {
     transform: scale(1.01);
     transition: 0.5s ease;
 }
-.text a{
-    text-decoration: none;
-    background-color: #FF5733;
-    width: 60px;
-    height: 2px;
+.text {
     padding: 15px;
-    color: white;
-    border-radius: 5px;
-    font-size: 12px;
+    display: block;
+    box-sizing: border-box;  /* Ensures padding is included in the width */
+}
+.text a{
+    text-align: right;
+    text-decoration: none;
 }
 
 footer {
@@ -105,4 +116,5 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    margin-top: auto; /* Push footer to the bottom */
 }
